@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;;
 
 @DisplayName("Pub spec")
 public class PubPricesTest {
@@ -97,7 +98,7 @@ public class PubPricesTest {
         @Test
         @DisplayName("and the order is for beers, then they are served.")
         public void testCanOrderMoreThanTwoBeers() throws Exception {
-            pub.computeCost(Pub.ONE_BEER, false, 5);
+            assertDoesNotThrow(() -> pub.computeCost(Pub.ONE_BEER, false, 5));
         }
     }
 }
